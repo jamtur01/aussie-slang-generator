@@ -1,8 +1,5 @@
-/* global tracery */
-
 import express from "express";
 import bodyParser from "body-parser";
-import tracery from "tracery-grammar";
 import Brogue from "brogue";
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
@@ -14,8 +11,6 @@ const __dirname = dirname(__filename);
 
 var app = express();
 var port = process.env.PORT || 3000;
-
-let sentenceCount = 1
 
 const adverb = [
   "drier",
@@ -91,7 +86,6 @@ const sentences = [
 
 function generate() {
 
-  // This is the Tracery grammar.
   let slanger = {
     adverb: adverb,
     verbs: verbs,
@@ -103,9 +97,8 @@ function generate() {
     origin: sentences
   };
 
-    brogue.parseGrammar(slanger);
+  brogue.parseGrammar(slanger);
   const results = brogue.expand('<h2>{origin}</h2>');
-  console.log(results);
   return results; 
 }
 
@@ -126,4 +119,3 @@ app.post("/", function(req, res) {
 var listener = app.listen(port, function() {
   console.log("Your app is listening on port " + listener.address().port);
 });
-
