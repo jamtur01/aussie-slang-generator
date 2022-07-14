@@ -1,0 +1,25 @@
+{
+  "name": "aussie-slang-generator",
+  "version": "0.0.1",
+  "description": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "debug": "nodemon --inspect ./index.js",
+    "dev": "nodemon ./index.js",
+    "start": "node ./index.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "brogue": "^0.7.1",
+    "express": "^4.16.4"
+  },
+  "license": "MIT",
+  "keywords": [
+    "node",
+    "glitch"
+  ],
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  }
+}
