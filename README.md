@@ -8,4 +8,4 @@ MIT
 
 ## Copyright
 
-James Turnbull <james@lovedthanlost.net> 2022.
+&copy; James Turnbull <james@lovedthanlost.net> 2022.
