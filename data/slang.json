@@ -6,5 +6,5 @@
 	"noun2": ["donger", "leg", "arm", "tongue", "tail", "head", "arse", "balls"],
 	"noun3": ["sauce bottle", "lollypop", "stubby", "soda water", "tinnie", "UDL can", "bong", "pipe"],
 	"gear": ["laughing", "crying", "dancing", "rogering", "freakin'", "fattening", "French"],
-	"origin": ["{adverb.capitalize} than {state.a} {noun.possessive} {noun2}", "Didn't come here to {verbs} {noun.s}", "Wrap your {gear} gear 'round that.", "A few {noun3.s} short of a six-pack", "Tell him he's {gear}", "Fair go, mate. Fair suck of the {noun3}", "It's a fuckin' {noun.possessive} breakfast"]
+	"origin": ["{adverb.capitalize} than {state.a} {noun.possessive} {noun2}", "Didn't come here to {verbs} {noun.s}", "Wrap your {gear} gear 'round that.", "A few {noun3.s} short of a six-pack", "Tell him he's {gear}", "Fair go, mate. Fair suck of the {noun3}.", "It's a fuckin' {noun.possessive} breakfast"]
 }
