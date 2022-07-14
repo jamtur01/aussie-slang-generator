@@ -1,6 +1,7 @@
 import express from "express";
 import bodyParser from "body-parser";
 import Brogue from "brogue";
+import jsonfile from "jsonfile";
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 
@@ -12,91 +13,9 @@ const __dirname = dirname(__filename);
 var app = express();
 var port = process.env.PORT || 3000;
 
-const adverb = [
-  "drier",
-  "moister",
-  "rougher",
-  "wetter",
-  "tougher",
-  "weaker",
-  "deader"
-];
-
-const verbs = [
-  "fuck",
-  "eat",
-  "coach",
-  "juggle",
-  "kick",
-];
-
-const state = [
-  "dead",
-  "live",
-  "upside-down"
-];
-
-const noun = [
- "dingo",
- "dog",
- "dolphin",
- "spider",
- "cat",
- "possum",
- "whale",
- "shark",
- "kangaroo",
- "wombat"
-];
-
-const noun2 = [
-  "donger",
-  "leg",
-  "arm",
-  "tongue",
-  "tail",
-  "head",
-];
-
-const noun3 = [
-  "sauce bottle",
-  "lollypop",
-  "stubbies",
-  "soda waters",
-  "tinnies",
-  "UDLs"
-]
-
-const gear = [
-  "laughing",
-  "crying",
-  "dancing",
-  "rogering",
-]
-
-const sentences = [
-  "{adverb.capitalize} than {state.a} {noun.possessive} {noun2}",
-  "Didn't come here to {verbs} {noun.s}",
-  "Wrap your {gear} gear 'round that.",
-  "A few {noun3.s} short of a six-pack",
-  "Tell him he's {gear}",
-  "Fair go, mate. Fair suck of the {noun3}",
-  "It's a fuckin' {noun.possessive} breakfast"
-]
+var slanger = jsonfile.readFileSync(__dirname + '/data/slang.json');
 
 function generate() {
-
-  let slanger = {
-    adverb: adverb,
-    verbs: verbs,
-    state: state,
-    noun: noun,
-    noun2: noun2,
-    noun3: noun3,
-    gear: gear,
-    origin: sentences
-  };
-
   brogue.parseGrammar(slanger);
   const results = brogue.expand('<h2>{origin}</h2>');
   return results; 
