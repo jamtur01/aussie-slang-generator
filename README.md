@@ -1,6 +1,6 @@
 # Aussie Slang Generator
 
-Speaks real strine.
+Generates real, true blue, Strine sayings that will impress and amaze your friends.
 
 ## License
 
