@@ -1,7 +1,8 @@
 {
   "name": "aussie-slang-generator",
   "version": "0.0.1",
-  "description": "",
+  "description": "Generates real, true blue, Strine sayings that will impress and amaze your friends",
+
   "type": "module",
   "main": "index.js",
   "scripts": {
