@@ -2,10 +2,11 @@
 	"adverb": ["drier", "moister", "rougher", "wetter", "tougher", "weaker", "deader", "drowsier", "drunker"],
 	"verbs": ["fuck", "eat", "coach", "juggle", "kick"],
 	"state": ["dead", "live", "upside-down", "tired", "drunk"],
-	"noun": ["dingo", "dog", "dolphin", "spider", "cat", "possum", "whale", "shark", "kangaroo", "wombat", "shrimp", "drop bear", "penguin", "pig", "cow", "sheep", "goat", "horse", "pony", "donkey", "chicken", "goose", "turkey", "rabbit", "pig", "cow", "sheep"],
+	"noun": ["dingo", "dog", "dolphin", "spider", "cat", "possum", "whale", "shark", "kangaroo", "wombat", "shrimp", "prawn", "drop bear", "penguin", "pig", "cow", "sheep", "goat", "horse", "pony", "donkey", "chicken", "goose", "turkey", "rabbit", "pig", "cow", "sheep", "snake"],
 	"noun2": ["donger", "leg", "arm", "tongue", "tail", "head", "arse", "balls"],
 	"noun3": ["sauce bottle", "lollypop", "stubby", "soda water", "tinnie", "UDL can", "bong", "pipe"],
 	"noun4": ["John Dory", "Tim Cory", "Bob Tory", "crap story"],
+	"noun5": ["raw", "dead", "drunk", "rancid"],
 	"gear": ["laughing", "crying", "dancing", "rogering", "freakin'", "fattening", "French"],
-	"origin": ["{adverb.capitalize} than {state.a} {noun.possessive} {noun2}", "Didn't come here to {verbs} {noun.s}", "Wrap your {gear} gear 'round that.", "A few {noun3.s} short of a six-pack", "A few {noun3.s} short of a picnic", "Tell him he's {gear}", "Fair go, mate. Fair suck of the {noun3}.", "It's a fuckin' {noun.possessive} breakfast", "What's the {noun4}?", "Throw a {noun} on the barbie." ]
+	"origin": ["{adverb.capitalize} than {state.a} {noun.possessive} {noun2}", "Didn't come here to {verbs} {noun.s}", "Wrap your {gear} gear 'round that.", "A few {noun3.s} short of a six-pack", "A few {noun3.s} short of a picnic", "Tell him he's {gear}", "Fair go, mate. Fair suck of the {noun3}.", "It's a fuckin' {noun.possessive} breakfast", "What's the {noun4}?", "Throw a {noun} on the barbie.", "Don't come the {noun5} {noun} with me." ]
 }
