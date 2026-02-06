@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Aussie Slang Generator</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="title" content="Aussie Slang Generator">
+    <meta name="description" content="Generates real, true blue, Strine sayings that will impress and amaze your friends.">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Aussie Slang Generator">
+    <meta property="og:description" content="Generates real, true blue, Strine sayings that will impress and amaze your friends.">
+    <meta property="og:image" content="strine.webp">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Aussie Slang Generator">
+    <meta property="twitter:description" content="Generates real, true blue, Strine sayings that will impress and amaze your friends.">
+    <meta property="twitter:image" content="strine.webp">
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+
+
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: helvetica, arial, sans-serif;
+        margin: 25px;
+      }
+
+      h1 {
+        font-weight: bold;
+        font-size: 60px;
+      }
+
+      span#red {
+        color: red;
+      }
+
+      span#blue {
+        color: blue;
+      }
+
+      h2 {
+        font-weight: bold;
+        color: black;
+        font-size: 36px;
+      }
+
+      p {
+        max-width: 600px;
+      }
+
+      button {
+        font-size: 24px;
+        border-radius: 3px;
+        background-color: lightgrey;
+        border: 1px solid grey;
+        box-shadow: 2px 2px teal;
+        cursor: pointer;
+        padding: 5px;
+      }
+
+      button:hover {
+        background-color: yellow;
+      }
+
+      button:active {
+        box-shadow: none;
+      }
+
+      footer {
+        margin-top: 50px;
+        padding-top: 25px;
+      }
+
+      #resultsContainer {
+        display: flex;
+        justify-content: space-around;
+      }
+
+      #results {
+        text-indent: 25px;
+        max-width: 400px;
+        padding: 10px;
+        margin: 10px;
+        border: 1px solid black;
+        font-family: "Times New Roman", Times, serif;
+        font-size: 36px;
+      }
+
+      #results:empty {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1><span id="red">Aussie</span> <span id="blue">slang</span> <span id="red">generator</span></h1>
+    </header>
+    <main>
+      <button type="button" id="gen-btn">Generate Aussie slang!</button>
+      <br />
+      <br />
+
+      <div id="resultsContainer">
+        <span id="results"></span>
+      </div>
+    </main>
+
+    <script>
+      var slang = {
+        "adverb": ["drier", "moister", "rougher", "wetter", "tougher", "weaker", "deader", "drowsier", "drunker"],
+        "verbs": ["fuck", "eat", "coach", "juggle", "kick"],
+        "state": ["dead", "live", "upside-down", "tired", "drunk"],
+        "noun": ["dingo", "dog", "dolphin", "spider", "cat", "possum", "whale", "shark", "kangaroo", "wombat", "shrimp", "prawn", "drop bear", "penguin", "pig", "cow", "sheep", "goat", "horse", "pony", "donkey", "chicken", "goose", "turkey", "rabbit", "pig", "cow", "sheep", "snake"],
+        "noun2": ["donger", "leg", "arm", "tongue", "tail", "head", "arse", "balls"],
+        "noun3": ["sauce bottle", "lollypop", "stubby", "soda water", "tinnie", "UDL can", "bong", "pipe"],
+        "noun4": ["John Dory", "Tim Cory", "Bob Tory", "crap story"],
+        "noun5": ["raw", "dead", "drunk", "rancid"],
+        "gear": ["laughing", "crying", "dancing", "rogering", "freakin'", "fattening", "French"],
+        "origin": [
+          "{adverb.capitalize} than {state.a} {noun.possessive} {noun2}",
+          "Didn't come here to {verbs} {noun.s}",
+          "Wrap your {gear} gear 'round that.",
+          "A few {noun3.s} short of a six-pack",
+          "A few {noun3.s} short of a picnic",
+          "Tell him he's {gear}",
+          "Fair go, mate. Fair suck of the {noun3}.",
+          "It's a fuckin' {noun.possessive} breakfast",
+          "What's the {noun4}?",
+          "Throw a {noun} on the barbie.",
+          "Don't come the {noun5} {noun} with me."
+        ]
+      };
+
+      function pickRandom(arr) {
+        return arr[Math.floor(Math.random() * arr.length)];
+      }
+
+      function capitalize(s) {
+        return s.charAt(0).toUpperCase() + s.slice(1);
+      }
+
+      function article(s) {
+        var vowels = "aeiouAEIOU";
+        var a = vowels.indexOf(s.charAt(0)) !== -1 ? "an" : "a";
+        return a + " " + s;
+      }
+
+      function pluralize(s) {
+        if (s.endsWith("s") || s.endsWith("sh") || s.endsWith("ch") || s.endsWith("x") || s.endsWith("z")) {
+          return s + "es";
+        }
+        if (s.endsWith("y") && "aeiou".indexOf(s.charAt(s.length - 2)) === -1) {
+          return s.slice(0, -1) + "ies";
+        }
+        return s + "s";
+      }
+
+      function possessive(s) {
+        if (s.endsWith("s")) {
+          return s + "'";
+        }
+        return s + "'s";
+      }
+
+      var modifiers = {
+        capitalize: capitalize,
+        a: article,
+        s: pluralize,
+        possessive: possessive
+      };
+
+      function expand(template) {
+        return template.replace(/\{([^}]+)\}/g, function(match, token) {
+          var parts = token.split(".");
+          var ruleName = parts[0];
+          var mods = parts.slice(1);
+
+          var rule = slang[ruleName];
+          if (!rule) return match;
+
+          var value = pickRandom(rule);
+
+          // Recursively expand if the picked value contains tokens
+          if (value.indexOf("{") !== -1) {
+            value = expand(value);
+          }
+
+          for (var i = 0; i < mods.length; i++) {
+            var mod = modifiers[mods[i]];
+            if (mod) value = mod(value);
+          }
+
+          return value;
+        });
+      }
+
+      function generate() {
+        return "<h2>" + expand("{origin}") + "</h2>";
+      }
+
+      document.getElementById("gen-btn").addEventListener("click", function() {
+        document.getElementById("resultsContainer").innerHTML = generate();
+      });
+    </script>
+  </body>
+</html>
